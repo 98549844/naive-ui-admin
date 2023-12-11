@@ -1,14 +1,19 @@
 <template>
   <div class="logo">
-    <img :src="websiteConfig.logo" alt="" :class="{ 'mr-2': !collapsed }" />
-    <h2 v-show="!collapsed" class="title">{{ websiteConfig.title }}</h2>
+    <!--    <img :src="websiteConfig.logo" alt="" :class="{ 'mr-2': !collapsed }" />-->
+    <n-icon color="#69AA46" size="25">
+      <leaf />
+    </n-icon>
+    <h2 v-show="!collapsed" class="title">&nbsp;&nbsp;{{ websiteConfig.title }}</h2>
   </div>
 </template>
 
 <script lang="ts">
   import { websiteConfig } from '@/config/website.config';
+  import { Leaf } from '@vicons/ionicons5';
   export default {
     name: 'Index',
+    components: { Leaf },
     props: {
       collapsed: {
         type: Boolean,

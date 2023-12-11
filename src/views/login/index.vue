@@ -3,10 +3,17 @@
     <div class="view-account-header"></div>
     <div class="view-account-container">
       <div class="view-account-top">
-        <div class="view-account-top-logo">
-          <img :src="websiteConfig.loginImage" alt="" />
+        <!--        <div class="view-account-top-logo">-->
+        <!--          <img :src="websiteConfig.loginImage" alt="" />-->
+        <!--        </div>-->
+        <div class="view-account-top-desc">
+          <n-icon color="#69AA46">
+            <leaf />
+          </n-icon>
+          <span class="red"> ACE </span>
+          <span class="white"> APPLICATION </span>
         </div>
-        <div class="view-account-top-desc">{{ websiteConfig.loginDesc }}</div>
+        <div class="view-account-top-trademark">{{ websiteConfig.loginTrademark }}</div>
       </div>
       <div class="view-account-form">
         <n-form
@@ -42,7 +49,9 @@
           <n-form-item class="default-color">
             <div class="flex justify-between">
               <div class="flex-initial">
-                <n-checkbox v-model:checked="autoLogin">自动登录</n-checkbox>
+                <n-checkbox v-model:checked="autoLogin">
+                  <span class="default-color">自动登录</span>
+                </n-checkbox>
               </div>
               <div class="flex-initial order-last">
                 <a href="javascript:">忘记密码</a>
@@ -61,7 +70,7 @@
               </div>
               <div class="flex-initial mx-2">
                 <a href="javascript:">
-                  <n-icon size="24" color="#2d8cf0">
+                  <n-icon size="24" color="#fff">
                     <LogoGithub />
                   </n-icon>
                 </a>
@@ -70,6 +79,20 @@
                 <a href="javascript:">
                   <n-icon size="24" color="#2d8cf0">
                     <LogoFacebook />
+                  </n-icon>
+                </a>
+              </div>
+              <div class="flex-initial mx-2">
+                <a href="javascript:">
+                  <n-icon size="24" color="#f77">
+                    <LogoGoogle />
+                  </n-icon>
+                </a>
+              </div>
+              <div class="flex-initial mx-2">
+                <a href="javascript:">
+                  <n-icon size="24" color="#69AA46">
+                    <LogoWechat />
                   </n-icon>
                 </a>
               </div>
@@ -90,7 +113,15 @@
   import { useUserStore } from '@/store/modules/user';
   import { useMessage } from 'naive-ui';
   import { ResultEnum } from '@/enums/httpEnum';
-  import { PersonOutline, LockClosedOutline, LogoGithub, LogoFacebook } from '@vicons/ionicons5';
+  import {
+    PersonOutline,
+    LockClosedOutline,
+    LogoGithub,
+    LogoFacebook,
+    Leaf,
+    LogoWechat,
+    LogoGoogle,
+  } from '@vicons/ionicons5';
   import { PageEnum } from '@/enums/pageEnum';
   import { websiteConfig } from '@/config/website.config';
   interface FormState {
@@ -101,7 +132,7 @@
   const formRef = ref();
   const message = useMessage();
   const loading = ref(false);
-  const autoLogin = ref(true);
+  const autoLogin = ref(false);
   const LOGIN_NAME = PageEnum.BASE_LOGIN_NAME;
 
   const formInline = reactive({
@@ -120,9 +151,9 @@
   const router = useRouter();
   const route = useRoute();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: { preventDefault: () => void }) => {
     e.preventDefault();
-    formRef.value.validate(async (errors) => {
+    formRef.value.validate(async (errors: any) => {
       if (!errors) {
         const { username, password } = formInline;
         message.loading('登录中...');
@@ -140,8 +171,8 @@
             const toPath = decodeURIComponent((route.query?.redirect || '/') as string);
             message.success('登录成功，即将进入系统');
             if (route.name === LOGIN_NAME) {
-              router.replace('/');
-            } else router.replace(toPath);
+              await router.replace('/');
+            } else await router.replace(toPath);
           } else {
             message.info(msg || '登录失败');
           }
@@ -161,6 +192,7 @@
     flex-direction: column;
     height: 100vh;
     overflow: auto;
+    background-color: #1d2024;
 
     &-container {
       flex: 1;
@@ -175,8 +207,13 @@
       text-align: center;
 
       &-desc {
-        font-size: 14px;
-        color: #808695;
+        font-size: 35px;
+      }
+
+      &-trademark {
+        font-size: 20px;
+        color: #478fca;
+        font-weight: bold;
       }
     }
 
@@ -185,8 +222,9 @@
     }
 
     .default-color {
-      color: #515a6e;
-
+      color: #fff;
+      font-weight: bold;
+      font-size: 16px;
       .ant-checkbox-wrapper {
         color: #515a6e;
       }
@@ -195,7 +233,7 @@
 
   @media (min-width: 768px) {
     .view-account {
-      background-image: url('../../assets/images/login.svg');
+      background-image: url('../../assets/images/login.jpg');
       background-repeat: no-repeat;
       background-position: 50%;
       background-size: 100%;
@@ -204,5 +242,14 @@
     .page-account-container {
       padding: 32px 0 24px 0;
     }
+  }
+  .red {
+    color: #f77;
+  }
+  .white {
+    color: #fff;
+  }
+  .green {
+    color: #69aa46;
   }
 </style>
