@@ -25,3 +25,5 @@ pnpm-debug.log*
 *.sw?
 /components.d.ts
 /components.d.ts
+
+naive-ui-admin.iml
