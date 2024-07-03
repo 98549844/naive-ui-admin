@@ -3,6 +3,12 @@ docker run -di \
 -v /Users/garlam/IdeaProjects/naive-ui-admin/dist:/usr/share/nginx/html \
 nginx:latest
 
+docker run -di \
+--name=naive-90 -p 90:80 \
+-v C:\Users\Garlam.Au\IdeaProjects\naive-ui-admin\dist:/usr/share/nginx/html \
+nginx:latest
+
+docker run -di --name=naive-90 -p 90:80 -v C:\Users\Garlam.Au\IdeaProjects\naive-ui-admin\dist:/usr/share/nginx/html nginx:latest
 
 参数说明：
 -name nginx：容器名称
