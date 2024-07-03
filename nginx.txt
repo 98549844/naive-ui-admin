@@ -1,5 +1,5 @@
 docker run -di \
---name=nginx-90 -p 90:80 \
+--name=naive-90 -p 90:80 \
 -v /Users/garlam/IdeaProjects/naive-ui-admin/dist:/usr/share/nginx/html \
 nginx:latest
 
