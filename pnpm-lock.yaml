@@ -10,7 +10,7 @@ importers:
     dependencies:
       '@alova/mock':
         specifier: ^2.0.6
-        version: 2.0.6(alova@3.0.16)
+        version: 2.0.6(alova@3.1.0)
       '@vicons/antd':
         specifier: ^0.12.0
         version: 0.12.0
@@ -24,8 +24,8 @@ importers:
         specifier: ^9.13.0
         version: 9.13.0(vue@3.5.5(typescript@4.9.5))
       alova:
-        specifier: ^3.0.16
-        version: 3.0.16
+        specifier: ^3.1.0
+        version: 3.1.0
       date-fns:
         specifier: ^2.30.0
         version: 2.30.0
@@ -224,6 +224,9 @@ packages:
 
   '@alova/shared@1.0.5':
     resolution: {integrity: sha512-/a2Qm+xebQJ1OlIgpslK+UL1J7yhkt1/Mqdq58a22+fSVdANukmUcF4j4w1DF3lxZ04SrqP+2oJprJ8UOvM+9Q==}
+
+  '@alova/shared@1.0.6':
+    resolution: {integrity: sha512-W89j64InjFIsW/u5YmYvpXGWz8JerBAYWyu/Fc7xfc5B+95SSA3ybW4nyHacBUW6yYQyGZwa8S8bVPePqa7bmA==}
 
   '@ampproject/remapping@2.3.0':
     resolution: {integrity: sha512-30iZtAPgz+LTIYoeivqYo853f02jBYSd5uGnGpkFV0M3xOt9aN73erkgYAmZU43x4VfqcnLxW9Kpg3R5LC4YYw==}
@@ -1408,8 +1411,8 @@ packages:
   ajv@8.17.1:
     resolution: {integrity: sha512-B/gBuNg5SiMTrPkC+A2+cW0RszwxYmn6VYxB/inlBStS5nx6xHIt/ehKRhIMhqusl7a8LjQoZnjCs5vhwxOQ1g==}
 
-  alova@3.0.16:
-    resolution: {integrity: sha512-iCMi/MFAyEU9ukt2Hy/htshT2gpDTa5L4b9IZzrtu/O1Oevj6zES/uC49hNEBuZWyBBky3M6tvynurMYusfFYA==}
+  alova@3.1.0:
+    resolution: {integrity: sha512-blccCirLgTqAJgMkQnAECiP7zs+rYLgfVHbghoIHryCXHVDbKdVsEg/PFrN04NexCN+UUFPzmKcdfaCyYCAeuw==}
     engines: {node: '>= 18.0.0'}
 
   ansi-escapes@4.3.2:
@@ -4371,12 +4374,14 @@ snapshots:
 
   '@alloc/quick-lru@5.2.0': {}
 
-  '@alova/mock@2.0.6(alova@3.0.16)':
+  '@alova/mock@2.0.6(alova@3.1.0)':
     dependencies:
       '@alova/shared': 1.0.5
-      alova: 3.0.16
+      alova: 3.1.0
 
   '@alova/shared@1.0.5': {}
+
+  '@alova/shared@1.0.6': {}
 
   '@ampproject/remapping@2.3.0':
     dependencies:
@@ -5728,9 +5733,9 @@ snapshots:
       json-schema-traverse: 1.0.0
       require-from-string: 2.0.2
 
-  alova@3.0.16:
+  alova@3.1.0:
     dependencies:
-      '@alova/shared': 1.0.5
+      '@alova/shared': 1.0.6
       rate-limiter-flexible: 5.0.3
 
   ansi-escapes@4.3.2:
