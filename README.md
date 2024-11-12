@@ -34,9 +34,15 @@ https://docs.naiveadmin.com/guide/introduction.html
 
 ### Plus
 
-基于 `NaiveUi` 全新设计版本，增加了众多特性，值得一试
+全新设计版本，增加了众多特性，值得一试
+
+基于 `NaiveUi` 组件库
 
 [NaiveAdmin Plus 预览](https://plus.naiveadmin.com)
+
+基于 `Antd` 组件库
+
+[NaiveAdmin Antd Plus 预览](https://plus-full.naiveadmin.com)
 
 ### Arco vue
 
@@ -50,13 +56,13 @@ https://docs.naiveadmin.com/guide/introduction.html
 
 [Element Plus Admin 预览](https://element.naiveadmin.com)
 
-以上版本同时具备 `NaiveAdmin` 功能/组件/页面，一如既往、开箱即用，欢迎前往查看。
-
 ### Antd vue
 
 新产品，如果您选的技术栈是 `Antd` 的话，不妨看看
 
 [NaiveAdmin Antd 预览](https://antd.naiveadmin.com)
+
+以上版本同时具备 `NaiveAdmin` 功能/组件/页面，一如既往、开箱即用，欢迎前往查看。
 
 ## 📚 文档
 
